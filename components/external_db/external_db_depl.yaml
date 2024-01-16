@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: external_db
+  name: external_db
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: external_db
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: external_db
+    spec:
+      containers:
+      - image: mysql:latest
+        name: mysql
+        resources: {}
+status: {}
